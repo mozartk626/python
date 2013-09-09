@@ -1,0 +1,2 @@
+def censor(text, word):
+    return ' '.join([('*' * len(word)) if x == word else x for x in text.split()])
