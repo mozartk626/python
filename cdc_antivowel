@@ -1,0 +1,6 @@
+def anti_vowel(s):
+	r = ''
+	for i in s:
+		if i not in 'aeiouAEIOU':
+			r += i
+	return r
