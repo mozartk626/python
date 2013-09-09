@@ -5,3 +5,9 @@ def reverse(word):
     y.append(word[x-1])
     x-=1
   return ''.join(y)
+
+def reverse(text):
+  reversed_text = ""
+  for character in text:
+      reversed_text = character + reversed_text
+  return reversed_text
