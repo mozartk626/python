@@ -1,3 +1,36 @@
+def check_rows(grid):
+    vals = range(1, len(grid)+1)   # vals = [1,2,3,...,n]
+    for row in grid:               # for every row of the matrix
+        for n in vals:             # for every number in the range
+            if n not in row:       # fail if the number is not in the row
+                return False
+    return True
+
+def transpose(m):
+    n = len(m)
+    for r in range(0,n):
+        for c in range(r+1,n):
+            m[r][c], m[c][r] = m[c][r], m[r][c]   # swap about diagonal
+    return m
+
+def check_sudoku(grid):
+    return check_rows(grid) and check_rows( transpose(grid) )
+    
+------------
+    
+def check_rows(grid):
+    vals = range(1, len(grid)+1)   # vals = [1,2,3,...,n]
+    for row in grid:               # for every row of the matrix
+        for n in vals:             # for every number in the range
+            if n not in row:       # fail if the number is not in the row
+                return False
+    return True
+
+def check_sudoku(grid):
+    return check_rows(grid) and check_rows( zip(*grid) )
+
+-------------
+
 def check_sudoku(p):
      n = len(p)
      digit = 1
