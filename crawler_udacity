@@ -75,9 +75,9 @@ def crawl_web(seed,max_depth):
         while tocrawl:
             page = tocrawl.pop()
             if page not in crawled:
-                union(children, get_all_links(get_page(page)))
-                crawled.append(page)
+               union(children, get_all_links(get_page(page)))
+               crawled.append(page)
             tocrawl = children
-            return crawled
+        return crawled
 
 
