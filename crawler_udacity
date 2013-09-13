@@ -55,7 +55,7 @@ def crawl_web(seed, max_depth):
     crawled = []
     next_depth = []
     depth = 0
-    while tocrawl and depth <= max_depth:
+    while tocrawl and depth <= max_depth: #max_pages solution is: while tocrawl and len(crawled) < max_pages:
        page = tocrawl.pop()
        if page not in crawled:
           union(next_depth, get_all_links(get_page(page)))
