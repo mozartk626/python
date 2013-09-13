@@ -1,0 +1,13 @@
+def symmetric(p):
+    i=0
+    while i<len(p):
+        row=p[i]                     
+        column=[p[0][i]]     
+        j=1
+        while j<len(p):
+            column.append(p[j][i])
+            j+=1
+        if column!=row:
+            return False
+        i+=1
+    return True
