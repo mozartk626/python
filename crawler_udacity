@@ -63,7 +63,7 @@ def crawl_web(seed, max_depth):
        if not tocrawl:
           tocrawl, next_depth = next_depth, []
           depth = depth + 1
-       return crawled
+    return crawled
           
 #another solution
 
