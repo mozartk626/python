@@ -11,3 +11,15 @@ def symmetric(p):
             return False
         i+=1
     return True
+    
+def symmetric(p):
+# testing whether it is a square
+   for e  in p :
+      if len(e)!=len(p):
+        return False
+
+   for i in range(0,len(p)):
+       for j in range(0,len(p)):
+           if p[i][j]!=p[j][i]:
+              return False
+    return True
