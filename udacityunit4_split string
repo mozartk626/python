@@ -10,6 +10,7 @@ def split_string(source,splitlist):
                 atsplit = False
             else:
                 output[-1] = output[-1] + char
+    return output
                 
                 
 def split_string(source,splitlist):
