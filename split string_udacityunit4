@@ -1,0 +1,27 @@
+def split_string(source,splitlist):
+    output = []
+    atsplit = True
+    for char in source:
+        if char in splitlist:
+            atsplit = True
+        else:
+            if atsplit:
+                output.append(char)
+                atsplit = False
+            else:
+                output[-1] = output[-1] + char
+                
+                
+def split_string(source,splitlist):
+    word = ""
+    result = []
+    for e in source:
+        if e not in splitlist:
+            word += e
+        else:
+            if word:
+                result.append(word)
+                word = ""
+    if word:
+        result.append(word)
+    return result
