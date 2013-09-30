@@ -1,0 +1,11 @@
+def involved(courses, person):
+  dic = {}
+  for hexamester in courses:
+      for course in courses[hexamester]:
+          for lable in courses[hexamester][course]:
+              if courses[hexamester][course][lable] == person:
+                  if hexamester in dic:
+                      dic[hexamester].append(course)
+                  else:
+                      dic[hexamester] =[course]
+  return dic
