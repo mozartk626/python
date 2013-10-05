@@ -11,7 +11,6 @@ def compute_ranks(graph):
         newranks = {}
         for page in graph:
             newrank = (1 - d) / npages
-            #Insert Code Here
             for node in graph:
                 if page in graph[node]:
                     newrank = newrank + d * ranks[node]/len(graph[node])           
