@@ -18,3 +18,35 @@ def deep_count(p):
            p.extend(element)
    return count
    
+def deep_count(p):
+   sum = 0
+   for e in p:
+      sum = sum + 1
+      if is_list(e):
+         sum = sum + deep_count(e)
+   return sum
+   
+def deep_count_a(p):
+    for i in p:
+        if is_list(i):
+            return len(p) + deep_count(i)
+        return len(p) 
+        
+def deep_count(p):
+    if not is_list(p):  # BASE CASE; return 1 for any non-list list-element
+        return 1
+    count = 0           # otherwise we need to count the elements in a list
+    for l in p:
+        count += 1      # increment by one for any element
+        if is_list(l):
+            count += deep_count(l)  # and if it's a list, add its elements too
+    return count
+    
+def deep_count(p):
+    if p == []:
+        return 0;
+    if is_list(p[0]) and p[0] != []:
+        return 1 + deep_count(p[0])
+    else:
+        return 1 + deep_count(p[1:])
+   
