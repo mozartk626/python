@@ -1,0 +1,20 @@
+def test(a):
+    queue = a[:]                        # get copy of original list
+    c = 0                               # set counter to zero
+    while queue != []:                  # while queue is not empty
+        element = queue.pop()           # get next queue element
+        c += 1                          # add it to the counter
+        if type(element) == list:       # if it's a list
+            for item in element:        # add every element in it to the queue
+                queue.append(item)
+    return c
+    
+def deep_count(p):
+   count = 0
+   while len(p) > 0:
+       count += 1
+       element = p.pop()
+       if is_list(element):
+           p.extend(element)
+   return count
+   
