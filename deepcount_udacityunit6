@@ -1,3 +1,12 @@
+def deep_count(p):
+    if not is_list(p):
+        return 0
+    else:
+        for e in p:
+            if is_list(e):
+               return len(p) + deep_count(e)
+        return len(p)
+
 def test(a):
     queue = a[:]                        # get copy of original list
     c = 0                               # set counter to zero
