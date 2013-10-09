@@ -1,0 +1,15 @@
+def make_converter(match, replacement):
+    return match, replacement 
+
+def apply_converter(converter, string):
+    match, replacement = converter
+    previous = " "
+    while previous != string:
+        previous = string
+        start = string.find(match)
+        if start != -1:
+            string = string[:start] + replacement + string[start+len(match):]
+    return string 
+    
+
+#不停的变化的是string. 所以return的应该是string，而不是一个新的变量。
