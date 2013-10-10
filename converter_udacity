@@ -13,3 +13,15 @@ def apply_converter(converter, string):
     
 
 #不停的变化的是string. 所以return的应该是string，而不是一个新的变量。
+
++def make_converter(match, replacement):
++    return match, replacement
++
++def apply_converter(converter, string):
++    match,replacement=converter
++    if match in string:
++        loc=string.find(match)
++        new_string=string[:loc]+replacement+string[loc+len(match):]
++        return apply_converter(converter,new_string)
++    else:
++        return string
