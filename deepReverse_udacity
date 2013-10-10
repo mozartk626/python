@@ -1,0 +1,11 @@
+def is_list(p):
+    return isinstance(p, list)
+
+def deep_reverse(n):
+    if is_list(n):
+        result = []
+        for i in range(len(n)-1, -1, -1):
+            result.append(deep_reverse(n[i]))
+        return result
+    else:
+        return n
