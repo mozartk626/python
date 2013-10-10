@@ -1,0 +1,18 @@
+def longest_repetition(iterable):
+    """
+    Return the item with the most consecutive repetitions in `iterable`.
+    If there are multiple such items, return the first one.
+    If `iterable` is empty, return `None`.
+    """
+    longest_element = current_element = None
+    longest_repeats = current_repeats = 0
+    for element in iterable:
+        if current_element == element:
+            current_repeats += 1
+        else:
+            current_element = element
+            current_repeats = 1
+        if current_repeats > longest_repeats:
+            longest_repeats = current_repeats
+            longest_element = current_element
+    return longest_element
